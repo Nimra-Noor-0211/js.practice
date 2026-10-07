@@ -146,7 +146,132 @@ console.log(calculateCompoundInterest(10000,0.05,4,2));
 */
 //3. Arrow Function
 
-let calculateCompoundInterest = (P, r, n, t) => {
+/*let calculateCompoundInterest = (P, r, n, t) => {
     return P * Math.pow(1 + r / n, n * t);
 };
-console.log(calculateCompoundInterest(10000,0.05,4,2));
+console.log(calculateCompoundInterest(10000,0.05,4,2)); */
+
+
+//---------ARRAYS------------------
+
+//Module2 
+//HomeTask
+// Task 3: Add a Vegetable to the Start
+
+/* Create a new array called `vegetableList` with at least two vegetable names.
+ Use the `unshift()` method to add another vegetable at the beginning and print
+  the updated array.*/
+
+  /*
+let vegetable = ["potato", "eggplant", "broccoli", "cauliflower"];
+vegetable.unshift("carrot");
+console.log(vegetable);
+*/
+
+/*### Task 4: Modify an Array with Splice
+
+- **Objective**: Using the `vegetableList` array, replace the second vegetable with a 
+new vegetablw using the `splice()` method. Print the updated array to see the changes.*/
+
+/*let vegetable= ["potato", "eggplant", "broccoli", "cauliflower"];
+vegetable.splice(1,1,"carrot")
+console.log(vegetable);
+*/
+
+//-------Module3--------
+
+//HomeTasks
+/*1.Create an array of five temperatures in Celsius. Use forEach() to convert each
+ temperature to Fahrenheit and print the converted values.*/
+/*
+ let temperature=[56, 68, 79, 45, 34];
+temperature.forEach(function(celsius) {
+    let fahrenheit=(celsius * 9/5) + 32;
+    console.log(fahrenheit);
+});
+/*
+
+/*2.Objective: Create an array of numbers representing the ages of five friends. Use map()
+ to create a new array that adds 5 years to each age and print the new array.*/
+/*
+let ages = [20, 21, 19, 22, 18];
+let newAges = ages.map(function(age) {
+    return age + 5;
+});
+console.log(newAges);
+*/
+
+/*Objective: Create an array of scores from a class of students. Use filter() to create a
+ new array that contains scores that are 75 or above, and print the result.*/
+/*
+ let scores = [67, 98, 57, 87, 68, 88, 78, 90, 97, 85];
+let passingScores = scores.filter(function(score) {
+    if (score >= 75) {
+        return true;
+    }
+});
+console.log(passingScores);
+*/
+
+/*4.Objective: Create an array of expenses for a month. Use reduce() to calculate
+ the total expenses and print it to the console.*/
+/*
+ let expenses = [500, 1200, 800, 1500, 300];
+let total = expenses.reduce(function(sum, expense) {
+    return sum + expense;
+}, 0);
+console.log(total);
+*/
+
+/*5.Objective: Create an array of words in a sentence. Use reduceRight() to create
+ a new string that concatenates the words in reverse order and print it.*/
+/*
+let words = ["I", "am", "learning", "JavaScript"];
+let reversedSentence = words.reduceRight(function(result, word) {
+    return result + " " + word;
+}, "");
+console.log(reversedSentence);
+*/
+
+/*6.### Task 6: `some()`
+
+- **Objective**: Create an array of ages of people attending an event. Use `some()`
+ to check if there is anyone who is under 18 years old and print the result.*/
+/*
+ let ages=[24,20,17,16,15,14,45];
+ let teenager=ages.some(function(age){
+    if(ages<18){
+        return true;
+    }
+ });
+ console.log(teenager);
+ */
+
+ /*7. Objective: Create an array of decimal numbers. Use every() to check if all
+  numbers are less than 100 and print the result.*/
+/*
+let numbers = [45.5, 67.2, 89.9, 23.4, 99.1];
+let result = numbers.every(function(number) {
+    return number < 100;
+});
+console.log(result);
+*/
+
+/* 8. Objective: Create an array of car manufacturers. Use find() to locate the
+ first manufacturer that contains the letter 'o' and print the result.*/
+/*
+let cars = ["Toyota", "Honda", "BMW", "Audi"];
+let result = cars.find(function(car) {
+    return car.includes("o");
+});
+console.log(result);
+*/
+
+/*9. Objective: Create an array of movie titles. Use findIndex() to find the index
+ of a specific title you're interested in, and print that index.*/
+ 
+let movies = ["Frozen", "Hotel Transylvania", "Toy Story", "Moana", "Shrek"];
+let index = movies.findIndex(function(movie) {
+    return movie === "Frozen";
+});
+console.log(index);
