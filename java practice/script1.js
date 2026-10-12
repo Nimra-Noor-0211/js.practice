@@ -269,9 +269,258 @@ console.log(result);
 
 /*9. Objective: Create an array of movie titles. Use findIndex() to find the index
  of a specific title you're interested in, and print that index.*/
- 
+ /*
 let movies = ["Frozen", "Hotel Transylvania", "Toy Story", "Moana", "Shrek"];
 let index = movies.findIndex(function(movie) {
     return movie === "Frozen";
 });
 console.log(index);
+*/
+
+
+
+
+//-----------------Objects----------------------
+
+
+/*### Home Task 1: Create and Print an Object
+
+- Create an object called `student` with properties:
+    - `name` (string)
+    - `age` (number)
+    - `grade` (string)
+- Print each property separately using dot notation. */
+/*
+let student = {
+    name: "Nimra",
+    age:20,
+    grade: "A+"
+};
+console.log(student.name);
+console.log(student.age);
+console.log(student.grade);
+*/
+
+/*### Home Task 2: Add and Modify Properties
+
+- Using the `student` object from Task 1,
+- Add a new property called `hobby` and assign it any hobby you like.
+- Change the `grade` property to a new value.
+- Print the updated object.  */
+/*
+let student = {
+    name: "Nimra",
+    age: 20,
+    grade: "A+"
+};
+student.hobby = "Learning";
+student.grade = "A";
+console.log(student);
+*/
+
+/*### Home Task 3: Check and Delete a Property
+
+- Check if the `student` object has the property `age`.
+- If it exists, delete the `age` property.
+- Print the final object after deletion.  */
+/*
+let student = {
+    name: "Nimra",
+    age: 20,
+    grade: "A+"
+};
+student.hobby = "Learning";
+console.log(student.age);
+delete student.age;
+console.log(student);
+*/
+
+//----or-----
+
+/*
+let student = {
+    name: "Nimra",
+    age: 20,
+    grade: "A+"
+};
+student.hobby = "Learning";
+if ("age" in student) {
+    delete student.age;
+}
+console.log(student);
+*/
+
+//----------------------Looping and Nesting in Objects--------------------
+
+/*### Task 1: Create an Object
+
+Create an object called `library` that represents a book collection. The object should have these properties:
+
+- `name` (string): Name of the library
+- `location` (string): Location of the library
+- `books` (object): A nested object containing at least 3 books. Each book should have `author` and `pages` properties.
+*/
+/*
+let library = {
+    name: "City Library",
+    location: "Downtown",
+    books:{
+        "Javascript Guide":{
+            author: "Marks",
+            pages: 320
+        },
+        "Phython Basics":{
+            author: "Anna",
+            pages: 250
+        },
+       "CSS Tricks":{
+        author: "Lara",
+        pages: 200
+       } 
+    }
+};
+console.log(library);
+
+//### Task 2: Loop and Print
+
+//- Loop through the `library` object and print the top-level properties (`name` and `location`).
+//- When you reach the `books` property (which is an object), loop through it and print the book name, author, and pages.
+
+
+for(let key in library){
+    if(key==="books"){
+        for(let books in library.books){
+            console.log("Books:"+ books +",Author:"+library.books[books].author+",Pages:"+library.books[books].pages);
+        }
+    }else{
+         console.log(key+":"+library[key]);
+         }
+}
+*/
+   
+/*# Class Task
+
+**Task 1:**
+
+Create an object called `student` with the following properties:
+
+- name (string)
+- age (number)
+- course (string)
+- grades (object) — nested object with keys for different subjects and their marks (e.g., Math: 85, English: 92)
+*/
+/*
+let student={
+    name: "Nimra",
+    age: 20,
+    course: "Bs Computer Science",
+    grades:{
+        sub1:{
+            title: "AICT",
+            marks: 94
+
+        },
+        sub2:{
+            title: "PF",
+            marks: 90
+        },
+        sub3:{
+            title: "OOP",
+            marks: 62
+        }
+    }
+
+};
+console.log(student);
+//**Task 2:**
+
+//Write a for in loop to print all the top-level properties (name, age, course) with their values.
+
+for(let key in student){
+    if(key==="grades"){
+        for(let grades in student.grades){
+            console.log("Title:"+ student.grades[grades].title+ ",Marks:"+ student.grades[grades].marks);
+        } 
+    }else{
+        console.log(key+ ":" + student[key]);
+    }
+}
+
+//----------------------------Object Methods and ‘this’ keyword----------------
+//Home Task
+/*### Task 1: Create an Object with a Method
+
+Create an object called `backpack` with these properties:
+
+- `brand` (string)
+- `color` (string)
+- `size` (string)
+
+Add a method `describe()` that prints:
+
+`This is a [color] [brand] backpack ([size]).`
+
+Call the `describe()` method to see the output.
+*/
+/*
+let backpack={
+    brand: "Herschel",
+    color: "Cream",
+    size:  "Medium",
+    contents:{
+        books: 6,
+        pencils: 3,
+        laptop: 1
+    },
+  describe: function(){
+    console.log("This is a " + this.color+ " " + this.brand + " backpack [" + this.size + "].");
+//### Task 2: Add Nested Object and Loop Through It
+
+//Add a nested object called `contents` inside `backpack`. Include at least 3 items with quantities
+    for( let key in this.contents){
+        console.log(key+ ":" +this.contents[key]);
+    }
+ }
+    
+};
+backpack.describe();
+*/
+
+/*# Logic Building Question 
+
+You have an object representing a **smartphone** with details about its brand, model, and a nested object of installed apps with their usage times in minutes:
+Write a function that:
+Tasks:
+1. Prints the brand and model of the smartphone.
+2. Loops through the `apps` object and prints each app’s name and usage time.
+3. Calculates and prints the total app usage time (sum of all app times).    */
+
+/*
+let smartphone = {
+  brand: "Samsung",
+  model: "Galaxy S21",
+  apps: {
+    WhatsApp: 120,
+    Instagram: 90,
+    YouTube: 45,
+    Email: 30
+  },
+
+describe: function() {
+    //Prints the brand and model of the smartphone.
+    console.log("Brand:" + this.brand);
+    console.log("Model:" + this.model);
+    //Loops through the apps object and prints each app’s name and usage time.
+    let total=0;
+    for(let key in this.apps){
+        console.log(key + ":" + this.apps[key]);
+         //3. Calculates and prints the total app usage time (sum of all app times).
+         total=total+this.apps[key]; 
+    }
+   console.log("Total app usage time is: " + total +" minutes");
+
+    }
+
+};
+smartphone.describe();
+*/
